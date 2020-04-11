@@ -8,7 +8,7 @@ short_list:
 	find /home/ijonglin/BACKUP/D512/MP3s -name "*.mp3" | head -3 >> FANCYCAR.list.out
 	find /home/ijonglin/BACKUP/D512/MP3s -name "*.m4a" | head -3 >> FANCYCAR.list.out
 
-run: 
+run:
 	python fancy2sad_listing.py
 
 check:
