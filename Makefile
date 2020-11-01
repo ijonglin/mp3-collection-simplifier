@@ -1,3 +1,5 @@
+all: clean list run
+
 list:
 	find /home/ijonglin/BACKUP/D512/MP3s -name "*.mp4" > FANCYCAR.list.out
 	find /home/ijonglin/BACKUP/D512/MP3s -name "*.mp3" >> FANCYCAR.list.out
@@ -16,6 +18,11 @@ check:
 
 clean:
 	rm -rf /home/ijonglin/BACKUP/MP3_thumb/
+
+do_setup:
+	cp -rp /home/ijonglin/BACKUP/MP3-thumb /home/ijonglin/BACKUP/MP3-thumb-albums
+	cp albumize.py one_offs.py Makefile /home/ijonglin/BACKUP/MP3-thumb-albums
+	cd /home/ijonglin/MP3-thumb-albums; make
 
 install:
 	sudo apt-get install python python-pip ffmpeg

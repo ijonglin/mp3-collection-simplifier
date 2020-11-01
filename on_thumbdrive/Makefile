@@ -1,4 +1,6 @@
-all: list albumize
+all: one_offs clean_empties list albumize
+	make clean_empties
+	make nissan_leaf_count
 
 all_short: short_list albumize
 
@@ -17,8 +19,11 @@ short_list_cleaned:
 clean_empties:
 	find . -maxdepth 1 -type d -exec rmdir {} \;
 
+one_offs:
+	python3 one_offs.py
+
 albumize:
-	python albumize.py
+	python3 albumize.py
 
 order_by_date:
 	find . -maxdepth 1 -type d | sort -r | while read i; do sleep 1; echo "$$i" ; touch "$$i" ; done
@@ -26,3 +31,4 @@ order_by_date:
 nissan_leaf_count:
 	echo "NUMBER OF DIRS(<255):" `find . -type d | wc -l`
 	echo "NUMBER OF FILES(<999)" `find . -type f | wc -l`
+
