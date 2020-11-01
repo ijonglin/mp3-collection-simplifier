@@ -27,4 +27,8 @@ For my own music collection, the number of files and directories were reduced as
 
 2015 Nissan Leaf player requires <255 directories and <999 songs.
 
-## TODO:
+## TODO
+
+Technically, the number of directories for the Nissan is still too big.
+Still need to consolidate the number of directories by only giving directories
+to artists who have more than one albums.
