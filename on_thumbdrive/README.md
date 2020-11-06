@@ -5,8 +5,8 @@ that both directories and number of files are limited.  So,
 the songs into a lot less files.  This script does just that
 in a very destructive manner.  So, to use this script:
 
-1. Make a copy of the MP3 thumb directory
-1. Copy the Makefile, one_offs.py and albumize.py scripts into the top level
+1. *ALWAYS* Make a copy of the MP3 thumb directory
+1. Copy the Makefile, and albumize.py scripts into the top level
 where the directory structure is two level {artist}/{album_name}/song.mp3
 1. Run the command:
     ```bash
@@ -14,7 +14,7 @@ where the directory structure is two level {artist}/{album_name}/song.mp3
     ```
 1. The script will merge all albums that have more than one song
 into a single merged mp3 ; for albums with only 1 song, the song
-is moved into a directory called one_offs.
+is moved into a single directory called one_offs.
 
 ## Example: Reduction factor
 
@@ -22,13 +22,9 @@ For my own music collection, the number of files and directories were reduced as
 
 | Type | Before Albumize | After Albumize |
 |---|---|---|
-| Number of Directories | 940 | 334 |
-| Number of Files | 5847 | 600 |
+| Number of Directories | 940 | 227 |
+| Number of Files | 5847 | 601 |
 
 2015 Nissan Leaf player requires <255 directories and <999 songs.
-
-## TODO
-
-Technically, the number of directories for the Nissan is still too big.
-Still need to consolidate the number of directories by only giving directories
-to artists who have more than one albums.
+Of course, you no longer have the ability to forward between songs, but
+at least it all fits on the thumbdrive.

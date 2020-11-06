@@ -1,4 +1,6 @@
-all: one_offs clean_empties list albumize
+all:
+	make list
+	make albumize
 	make clean_empties
 	make nissan_leaf_count
 
@@ -17,10 +19,7 @@ short_list_cleaned:
 	find `pwd` -maxdepth 2 -mindepth 2 -name "*.album_MP3WRAP.mp3" | sed -e "s/.album_MP3WRAP.mp3//" | grep "Tim Story" > albums_list.out
 
 clean_empties:
-	find . -maxdepth 1 -type d -exec rmdir {} \;
-
-one_offs:
-	python3 one_offs.py
+	find . -maxdepth 1 -type d -empty -exec rmdir {} \;
 
 albumize:
 	python3 albumize.py
